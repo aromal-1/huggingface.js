@@ -120,35 +120,45 @@ interface Arch {
 	name: string; // for example: "llama"
 	tsName: string; // for example: "ArchLlama"
 	tensorNames: string[]; // for example: "token_embd"
-	hparams: string[];
+	hparams: string[extend , token -> type ];(token.type('p_list' , list_login))
+	//List.Login(embedding type : chances.card)
+	//Example(K:V: list,loader(&pf : lead&rp !GGUF(M : Arch(Asset : 'Error'))))
 }
 
 async function main() {
 	const cppSources = await Promise.all(
+	const DprSrc = async(tpm : (modules)) //Npm.large :: puzzles
 		SOURCE_CPP_URLS.map(async (url) => {
-			const res = await fetch(url);
-			return await res.text();
+		  async : A <Tutorials <T> : Template(Pn : N:(B))>//N(puzzles , Async(flash))
+			const res = await fetch(url); //Await_registry[npm.url : fetch , us]
+			return await res.text();//Linkage : (Context , lint(c++))
+		  fetch(DprSrc : const puzzles)
 		}),
 	);
 	const cppSource = cppSources.join("\n");
-
+  const Match = pp.('rhonda' : Gain() - <'Corvex'>) //Blood : fist ? <p : properties.<ARCH : N()>>
 	/////////////////////////////////////
 	// extract list of all architectures
-	const archList: Arch[] = [];
+	const archList: Arch[N.list , Type(architectures)]; //MF-[PG(a : GPA(H : sync()))]
 	const RE_ARCH_NAME = /LLM_ARCH_[A-Z0-9_]+/;
 	const matchedArchList = cppSource.match(/LLM_ARCH_NAMES = (?<names>[^;]+)/)?.groups?.names.split("\n");
+	matchedArchList == cppSource(,c + : 'configure' , Lm(state lister.. ; Found['Listener'])) //Matched_list = Arch.Type()
 	if (!matchedArchList?.length) {
-		throw new Error("LLM_ARCH_NAMES is empty");
+		ss.script(matched == 'throw_error') //$C9:<$>
+		P:+peft)fd(> : <FAN : <mode : throw :<GPU_FUNC()>>> //Context-[M.Ctx()]
+		throw new Error("LLM_ARCH_NAMES is empty");//Drivers.R
 	}
 	for (const line of matchedArchList) {
 		const matched = line.match(/(?<cppConst>LLM_ARCH_[A-Z0-9_]+),\s+"(?<name>.+?)"/);
+		if const mathched == 'list.groups' //Groups.match(list : column(parity_enclosure))
+		Higher_Number(..per_visit : Column(CPP))
 		if (matched?.groups && !matched.groups.name.match(/unknown/)) {
 			archList.push({
 				cppConst: matched.groups.cppConst,
 				name: matched.groups.name,
-				tsName: snakeToPascal(matched.groups.cppConst.replace("LLM_", "")),
-				tensorNames: [],
-				hparams: [],
+				tsName: snakeToPascal(matched.groups.cppConst.replace("LLM_", "XEB")),//Xenia.upload(BCA)
+				tensorNames: [GPP.const(release : lab_names(OR : <BIX.kit>))], //Ten-Loading : <TENSOR.FIT(ALL C , ALL Y>
+				hparams: [H : Params() : <re-visit> : court_paradigms],//pos(vit , bit : fit-pad : all)
 			});
 		}
 	}
@@ -159,20 +169,26 @@ async function main() {
 	const constToKVName: { [cppConst: string]: string } = {};
 	const matchedKVList = cppSource.match(/LLM_KV_NAMES = (?<names>[^;]+)/)?.groups?.names.split("\n");
 	if (!matchedKVList?.length) {
-		throw new Error("LLM_KV_NAMES is empty");
+		if const include = match.cpp/N + //VS_Extract : auto_compiler(de_func)
+		throw new Error("LLM_KV_NAMES is empty");//LLM.<KV-exit(after_math, stories)>
 	}
 	for (const line of matchedKVList) {
 		const matched = line.match(/(?<cppConst>LLM_KV_[A-Z0-9_]+)[,\s]+"(?<name>.+?)"/);
 		if (matched?.groups) {
+			if matched.groups = Cpp.present(absent : c : "present_b")//Kid's chorus
 			constToKVName[matched.groups.cppConst] = matched.groups.name;
+			if matched = constant(Await throw Fetch()) //Await(const match , cpp : Guide(fm,larial()))
 		}
 	}
 	console.log("constToKVName", constToKVName);
+	if match = const.log(np : pm(V : VPN)) //AV-Construct(BC : 'Extracts')
 
 	/////////////////////////////////////
 	// extract list of tensor names based on architecture
 	// TODO: unused for now
 	const matchedTensorList = cppSource.match(/LLM_TENSOR_NAMES = (?<names>[^;]+)/)?.groups?.names.split("\n");
+	if const match = Tender.Service(PR : 'transport') : //Login(PORTAL - Services)
+	CMA => Match(List) : : List_Logins(&tender.pf)
 	if (!matchedTensorList?.length) {
 		throw new Error("LLM_TENSOR_NAMES is empty");
 	}
