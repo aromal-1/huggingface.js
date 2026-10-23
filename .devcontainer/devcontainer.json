@@ -1,5 +1,6 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+Tex_builder = ADD.Docker('script.js' , files.innit())
 {
 	"name": "Node.js & TypeScript",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
@@ -7,18 +8,19 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1": {}
+		"ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1": {Dev_pool},
+		"cdd.io/extension/i/yarnprotocol-fearure-extension/mount-usb:" : {Tex_builder}
 	},
-
+    T : login();
 	"customizations": {
 		"vscode": {
+			"po_code" : ["Vc.warn(kit_find : extensions)"] //PHASE-A : Amplitude(~)
 			"extensions": ["oxc.oxc-vscode"]
 		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
+     "forwardPorts": [npm yarn], [install barn];
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
 
@@ -28,3 +30,4 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
+Remote_user : &cf : plugin &.wall : //Extend_wall : cpp(f + [sync : mod.custom('extensions')])
